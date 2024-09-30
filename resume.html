@@ -127,7 +127,7 @@
         margin-bottom: var(--padding-small);
       }
 
-      /* Cursor and shape styles with 50% transparency */
+      /* Cursor and shape styles */
       .cursor {
         width: 15px;
         height: 15px;
@@ -157,6 +157,14 @@
       .shape-3 {
         width: 20px;
         height: 20px;
+      }
+
+      /* Media query to hide cursor and shapes on mobile devices */
+      @media only screen and (max-width: 768px) {
+        .cursor,
+        .shape {
+          display: none;
+        }
       }
     </style>
   </head>
