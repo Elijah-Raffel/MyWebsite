@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="animation.css" />
+    <title>Elijah T. Raffel - Resume</title>
+    <style>
+      :root {
+        --padding-small: 2px; /* Small padding */
+        --padding-medium: 5px; /* Medium padding */
+        --padding-large: 10px; /* Large padding */
+        --font-size-base: 1vh; /* Base font size */
+        --font-size-h1: 1.5vh; /* Header 1 font size */
+        --font-size-h2: 1.2vh; /* Header 2 font size */
+        --font-size-h3: 1.1vh; /* Header 3 font size */
+        --container-bg: #ffffff; /* White background for the inner container */
+        --wrapper-bg: #0d1d1a; /* Yellow background for the wrapper */
+      }
+
+      /* Disable scrolling */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Disable both horizontal and vertical scrolling */
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: var(--wrapper-bg); /* Full screen yellow background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .wrapper {
+        background-color: var(--wrapper-bg);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        background-color: var(--container-bg);
+        padding: 25px;
+        width: 595px;
+        max-height: 1000px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        text-align: center;
+        margin-top: var(--padding-small);
+      }
+
+      h1 {
+        font-size: var(--font-size-h1);
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: var(--font-size-h2);
+        border-bottom: 2px solid #333;
+        padding-bottom: var(--padding-medium);
+        margin-top: var(--padding-small);
+      }
+
+      h3 {
+        font-size: var(--font-size-h3);
+        font-weight: bold;
+        margin: 0;
+      }
+
+      p {
+        margin: var(--padding-medium) 0;
+        font-size: var(--font-size-base);
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: var(--padding-small);
+      }
+
+      .contact-info a {
+        text-decoration: none;
+        color: #000000;
+        font-size: var(--font-size-base);
+      }
+
+      .section {
+        margin-bottom: var(--padding-large);
+      }
+
+      .flex-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      span {
+        font-size: 1.1vh;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        font-size: var(--font-size-base);
+      }
+
+      ul li {
+        margin-bottom: var(--padding-small);
+      }
+
+      /* Cursor and shape styles with 50% transparency */
+      .cursor {
+        width: 15px;
+        height: 15px;
+        background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white */
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .shape {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white */
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .shape-1 {
+        width: 60px;
+        height: 60px;
+      }
+
+      .shape-2 {
+        width: 40px;
+        height: 40px;
+      }
+
+      .shape-3 {
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--cursor code-->
+    <div class="cursor"></div>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+
+    <div class="wrapper">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+
+      <div class="container">
+        <header>
+          <h1>Elijah T. Raffel</h1>
+          <div class="contact-info">
+            <a href="tel:+19012833935">(901) 283 - 3935</a> |
+            <a href="mailto:Elijah.Raffel@gmail.com">Elijah.Raffel@gmail.com</a>
+            |
+            <a href="http://ElijahRaffel.com" target="_blank"
+              >ElijahRaffel.com</a
+            >
+            |
+            <a href="http://linkedin.com/in/Elijah-Raffel" target="_blank"
+              >linkedin.com/in/Elijah-Raffel</a
+            >
+          </div>
+        </header>
+
+        <section class="section">
+          <h2>Education</h2>
+          <div class="flex-row">
+            <h3>University of Tennessee Knoxville, Knoxville, TN</h3>
+            <span>Aug 2021 – Present</span>
+          </div>
+          <p>Bachelor of Science in Computer Engineering, GPA: 3.54</p>
+          <p>Minor in Integrated Business and Engineering</p>
+          <p>Minor in Engineering Entrepreneurship</p>
+          <p>Expected Graduation: May 2025</p>
+        </section>
+
+        <section class="section">
+          <h2>Experience</h2>
+          <div class="flex-row">
+            <h3>Oceaneering Mobile Robotics, Houston, TX</h3>
+            <span>Jun 2024 – Aug 2024</span>
+          </div>
+          <p><strong>Intern / Software Engineering</strong></p>
+          <ul>
+            <li>
+              Produced a simulation script to generate and monitor missions for
+              various project models
+            </li>
+            <li>
+              Created a script that analyzed data using Pandas and Matplotlib
+            </li>
+          </ul>
+
+          <div class="flex-row">
+            <h3>Techstars, Knoxville, TN</h3>
+            <span>Mar 2024 – Jun 2024</span>
+          </div>
+          <p><strong>Intern / Business and Engineering Consultant</strong></p>
+          <ul>
+            <li>
+              Collaborated with 10 tech startups using OnShape for prototype
+              development
+            </li>
+            <li>
+              Rendered marketing material for founders to use throughout
+              investment outreach
+            </li>
+          </ul>
+
+          <div class="flex-row">
+            <h3>Emerging Technologies and Cybersecurity Lab, Knoxville, TN</h3>
+            <span>Jul 2023 – Jun 2024</span>
+          </div>
+          <p>
+            <strong
+              >Undergraduate Research Assistant / Hardware Engineering</strong
+            >
+          </p>
+          <ul>
+            <li>
+              Developed software to convert Verilog into dual rail logic using
+              binary decision diagrams
+            </li>
+            <li>
+              Implemented magnetic tunnel junctions in chip design for lower
+              power usage
+            </li>
+          </ul>
+
+          <div class="flex-row">
+            <h3>Sharp, Memphis, TN</h3>
+            <span>Jun 2022 – Jul 2022</span>
+          </div>
+          <p><strong>Intern / NPI Engineering</strong></p>
+          <ul>
+            <li>
+              Coordinated testing and development of a new gas stove, resulting
+              in a $300M sale
+            </li>
+            <li>
+              Organized and oversaw the new product release process for a
+              microwave model
+            </li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Projects</h2>
+          <div class="flex-row">
+            <h3>Object Recognition Survival Game</h3>
+            <span>Sept 2023 – Nov 2023</span>
+          </div>
+          <p><strong>Student / ECE 351 - Digital System Design</strong></p>
+          <ul>
+            <li>
+              Programmed an object recognition model in Python to detect the
+              direction I was pointing
+            </li>
+            <li>
+              Interacted with an FPGA through UART to update backend information
+              to control the game
+            </li>
+          </ul>
+
+          <div class="flex-row">
+            <h3>Power Supply</h3>
+            <span>Oct 2023 – Oct 2023</span>
+          </div>
+          <p><strong>Student / ECE 335 - Electronic Devices</strong></p>
+          <ul>
+            <li>
+              Calculated the required values needed to properly implement a
+              full-wave rectifier
+            </li>
+            <li>
+              Designed a circuit to convert 120 volts AC to 2.5 volts DC with a
+              max current of 1 amp
+            </li>
+          </ul>
+
+          <div class="flex-row">
+            <h3>Laser Engraver</h3>
+            <span>Apr 2023 – May 2023</span>
+          </div>
+          <p><strong>Student / ECE 256 - Computer System Interfaces</strong></p>
+          <ul>
+            <li>
+              Modeled the base in SolidWorks and 3D printed the design with
+              several iterations of testing
+            </li>
+            <li>
+              Programmed in C to operate two servo motors along with the laser
+              module
+            </li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Leadership and Activities</h2>
+          <div class="flex-row">
+            <h3>Integrated Business and Engineering Program, Knoxville, TN</h3>
+            <span>Mar 2022 – Present</span>
+          </div>
+          <p>
+            <strong
+              >Member / Haslem College of Business and Tickle College of
+              Engineering</strong
+            >
+          </p>
+          <ul>
+            <li>
+              Participated in capstone projects every semester alongside
+              business and engineering majors
+            </li>
+            <li>
+              Engaged in strategy and decision-making discussions with
+              executives during site visits
+            </li>
+          </ul>
+
+          <div class="flex-row">
+            <h3>Entrepreneurship Club, Knoxville, TN</h3>
+            <span>Aug 2021 – Present</span>
+          </div>
+          <p><strong>President / Haslam College of Business</strong></p>
+          <ul>
+            <li>
+              Coordinated with local businesses to have them speak about their
+              entrepreneurship journeys
+            </li>
+            <li>
+              Organized workshop events and socials to better network with the
+              community
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script>
+      // Mouse move code
+      document.body.addEventListener("mousemove", (evt) => {
+        const mouseX = evt.clientX;
+        const mouseY = evt.clientY;
+
+        // Set the position of the cursor
+        gsap.set(".cursor", {
+          x: mouseX,
+          y: mouseY,
+        });
+
+        // Animate the position of the shapes with staggered motion
+        gsap.to(".shape", {
+          x: mouseX,
+          y: mouseY,
+          stagger: -0.1, // Negative stagger for delayed movement effect
+        });
+      });
+    </script>
+  </body>
+</html>
