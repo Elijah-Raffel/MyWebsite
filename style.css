@@ -1,0 +1,158 @@
+/* style.css */
+
+:root {
+  --outer-circle: #142f2a;
+  --middle-circle: #103b20;
+  --inner-circle: #255134;
+  --background: #0d1d1a;
+  --text-color: #000075;
+  --border-color: #bb8600;
+  --shadow-color: #523a00;
+  --cursor-color: #ac8b38;
+}
+
+/* --- Global Reset & Body --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Garamond, serif;
+  background-color: var(--background);
+  margin: 0;
+  min-height: 100vh;
+  width: 100vw;
+  cursor: none !important; /* Force hide system cursor */
+}
+
+/* Ensure system cursor never appears on links or images */
+a, button, img {
+  cursor: none !important;
+}
+
+/* --- Background Layer --- */
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* --- Content Container --- */
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* Increased max size slightly (2rem) for better visibility on desktop */
+  font-size: clamp(1rem, 2.5vw, 2rem); 
+}
+
+/* --- Text & Link Styling (The Gold Box) --- */
+p, .list {
+  color: var(--text-color);
+  text-align: center;
+  
+  width: fit-content; 
+  margin: 0 auto; 
+  padding: 0.5em 1em; 
+  
+  border: 0.5vw solid var(--border-color);
+  border-radius: 0.5vw;
+  background-color: var(--border-color);
+  box-shadow: 0 0 1vw var(--shadow-color);
+}
+
+/* SPECIFIC NAME STYLING (New) */
+p strong {
+  font-size: 1.5em; /* Makes the name 50% larger than the icons */
+  vertical-align: middle; /* Keeps it aligned with the icons */
+  margin-right: 5px; /* Adds a little space before the slash */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  margin: 0 5px;
+}
+
+a img {
+  vertical-align: middle;
+  transition: transform 0.2s;
+  width: 1.5em; /* Icons relative to the base font size */
+  height: auto;
+}
+
+a:hover img {
+  transform: scale(1.2);
+}
+
+/* --- Bubble Animation --- */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: #bb86004b; 
+  bottom: -20vh; 
+  pointer-events: none;
+  left: var(--bubble-left);
+  width: var(--bubble-size);
+  height: var(--bubble-size);
+  animation: float-up var(--float-duration) var(--float-delay) ease-in infinite;
+}
+
+@keyframes float-up {
+  to { transform: translateY(-130vh); }
+}
+
+/* --- Custom Cursor --- */
+.cursor-dot, .cursor-shape {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  display: none; 
+}
+
+.cursor-dot {
+  width: 20px;
+  height: 20px;
+  background: var(--cursor-color);
+  z-index: 10001; 
+}
+
+.cursor-shape {
+  opacity: 0.7;
+  z-index: 10000; 
+  will-change: transform;
+}
+
+.shape-small  { background: var(--inner-circle); width: 28px; height: 28px; }
+.shape-medium { background: var(--middle-circle); width: 44px; height: 44px; }
+.shape-large  { background: var(--outer-circle); width: 66px; height: 66px; }
+
+/* Enable custom cursor on desktops */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-dot, .cursor-shape { display: block; }
+}
+
+/* --- Mobile Overrides --- */
+@media only screen and (max-width: 800px) {
+  body, a, img { cursor: auto !important; }
+  
+  p, .list {
+    font-size: 1.2rem;
+    border-width: 4px;
+    margin: 20px auto;
+  }
+}
